@@ -119,7 +119,7 @@ class CabiSearchingCustom {
         foreach ($_POST as $key => $value) {
             $pos = strpos($key, $_POST['cabi_searching_custom_post_type']);
             if ($value && $pos !== false) {
-                //echo "{$key}: {$compares_list[$i]} | ";
+                //echo "{$i} &gt; {$key} ({$compares_list[$i]}): {$value}<br>";
                 switch ($compares_list[$i]) {
                     case 'lk':
                         $compare = "'compare' => 'LIKE',";
@@ -145,8 +145,8 @@ class CabiSearchingCustom {
                     'value' => '{$value}',
                     {$compare}
                     ),";
-                $i++;
             }
+            if ($pos !== false) $i++;
         }
         $meta_query .= ")";
         eval("\$args = array(
