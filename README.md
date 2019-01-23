@@ -7,3 +7,10 @@ Plugin per form di ricerca che fanno capo a custom field ACF
 ## Visualizzazione dei risultati di ricerca
 `[cabi_searching_custom_results template="template_filename" compares="eq, eq" container_class="my_custom_class"]`
 
+Il parametro *compares* contiene le condizioni di ricerca per i campi inseriti nel form:
+* lk: LIKE
+* eq: =
+* gt: >
+* ge: >=
+* lt: <
+* le: <=
