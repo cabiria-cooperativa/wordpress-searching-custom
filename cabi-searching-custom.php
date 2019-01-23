@@ -87,7 +87,7 @@ class CabiSearchingCustom {
                     case 'text':
                     case 'number':
                         ?>
-                        <input type="text" class="cabi_searching_custom__field cabi_searching_custom_<?php echo $this->data[$i]['name'] ?>" name="<?php echo $this->data[$i]['name'] ?>" placeholder="<?php echo strip_tags($this->data[$i]['label']) ?>" id="<?php echo $this->data[$i]['id'] ?>">
+                        <input type="text" value="<?php echo $_POST[$this->data[$i]['name']] ?>" class="cabi_searching_custom__field cabi_searching_custom_<?php echo $this->data[$i]['name'] ?>" name="<?php echo $this->data[$i]['name'] ?>" placeholder="<?php echo strip_tags($this->data[$i]['label']) ?>" id="<?php echo $this->data[$i]['id'] ?>">
                         <?php
                         break;
                     case 'select':
@@ -179,8 +179,10 @@ class CabiSearchingCustom {
                 }
                 $html .= $row;
             }
+            ob_start();
             if ($container_class) echo '<div class="' . $container_class . '">' . $html . '</div>';
             else echo $html;
+            return ob_get_clean();
         }
     }
 
