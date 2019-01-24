@@ -69,6 +69,7 @@ class CabiSearchingCustom {
     }
 
     function render_form($atts, $content = null) {
+		$this->data = array();
         extract(shortcode_atts(array(
             'post_type' => 'post',
             'fields' => '',
@@ -160,6 +161,7 @@ class CabiSearchingCustom {
 
     function render_results($atts, $content = null) {
         if (!isset($_POST['_wpnonce']) || !wp_verify_nonce($_POST['_wpnonce'], 'cabi_search_custom_form')) exit();
+		$this->data = array();
         extract(shortcode_atts(array(
             'template' => 'default',
             'compares' => '',
