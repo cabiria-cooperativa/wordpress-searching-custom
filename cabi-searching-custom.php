@@ -4,7 +4,7 @@
  * Plugin URI: https://www.cabiria.net
  * Description: Plugin per la ricerca in custom post / custom field.
  * Version: 1.0.0
- * Author: Cabiria
+ * Author: Simone Alati
  * Author URI: https://www.cabiria.net
  * Text Domain: cabi
  */
